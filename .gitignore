@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+
+# macOS metadata
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Ignore CSV and result output
+handles.csv
+results.txt
