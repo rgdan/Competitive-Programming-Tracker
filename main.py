@@ -30,7 +30,7 @@ def process_csv(file_path, output_file="results.txt"):
 
             line = f"{name} | {atcoder_solved} | {codechef_solved} | {cf_solved} | {combined_sum} | {omegaup_solved}"
             results.append(line)
-            print(f"Processed: {name}")
+            print(f"[{i+1}] Processed: {name}")
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(f"{header}\n{separator}\n")
