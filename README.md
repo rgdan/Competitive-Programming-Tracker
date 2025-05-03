@@ -29,7 +29,7 @@ This script automates the task of checking each platform manually, making gradin
 
 6. **Give Script Neccesary Info**   
    The script will ask you for the path to the `.csv` file with usernames, the format for this file can be found below.   
-   In addition to that it will also ask you for a token for AtCoder. For instructions on how to get this token refer to [atcoder.md](documentation/AtCoder.md)
+   In addition to that it will also ask you for a token for AtCoder. For instructions on how to get this token refer to [AtCoder.md](documentation/atcoder.md)
 
 ## I/O
 
