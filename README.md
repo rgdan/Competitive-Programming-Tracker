@@ -10,6 +10,27 @@ In a university course, students had to solve competitive programming problems a
 
 This script automates the task of checking each platform manually, making grading easier and faster.
 
+## Usage
+
+1. **Install Python 3.8+**  
+   [Download Python](https://www.python.org/downloads/)
+
+2. **Install Git**   
+   [Download Git](https://git-scm.com/downloads)
+
+3. **Clone Repository**   
+    Clone the repo locally using the command: `git clone https://github.com/rgdan/Competitive-Programming-Tracker` and access the repo using `cd Competitive-Programming-Tracker`
+
+4. **Install Requirements**   
+   Run the command `pip install -r requirements.txt` to install the required libraries
+
+5. **Run Script**   
+   Run the script using the command: `python3 main.py`
+
+6. **Give Script Neccesary Info**   
+   The script will ask you for the path to the `.csv` file with usernames, the format for this file can be found below.   
+   In addition to that it will also ask you for a token for AtCoder. For instructions on how to get this token refer to [AtCoder.md](documentation/AtCoder.md)
+
 ## I/O
 
 ### Input
