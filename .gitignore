@@ -16,6 +16,5 @@ venv/
 .vscode/
 .idea/
 
-# Ignore CSV and result output
-handles.csv
-results.txt
+# Ignore CSV files
+*.csv

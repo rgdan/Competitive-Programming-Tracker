@@ -5,10 +5,9 @@ from platforms.omegaup import get_omegaup_solved
 from platforms.codechef import get_codechef_solved
 from platforms.atcoder import get_atcoder_solved
 
-def main(file_path, output_file="results.txt"):
+def main(file_path, output_file="results.csv"):
     results = []
-    header = "Name | AtCoder | CodeChef | CodeForces | AC+CC+CF | Omegaup"
-    separator = "-" * len(header)
+    fieldnames = ["Name", "AtCoder", "CodeChef", "CodeForces", "AC+CC+CF", "Omegaup"]
 
     atcoder_token = input("[?] Enter AtCoder token (or press Enter to skip): ").strip() or None
 
@@ -38,23 +37,29 @@ def main(file_path, output_file="results.txt"):
                     atcoder_solved = 0
 
             print(f"[{i+1}.2] Processing CodeChef for {name}")
-            codechef_solved = get_codechef_solved(codechef)
+            codechef_solved = get_codechef_solved(codechef) or 0
 
             print(f"[{i+1}.3] Processing CodeForces for {name}")
-            cf_solved = get_codeforces_solved(codeforces)
+            cf_solved = get_codeforces_solved(codeforces) or 0
 
             print(f"[{i+1}.4] Processing OmegaUp for {name}")
-            omegaup_solved = get_omegaup_solved(omegaup)
+            omegaup_solved = get_omegaup_solved(omegaup) or 0
 
             combined_sum = atcoder_solved + codechef_solved + cf_solved
 
-            line = f"{name} | {atcoder_solved} | {codechef_solved} | {cf_solved} | {combined_sum} | {omegaup_solved}"
-            results.append(line)
+            results.append({
+                "Name": name,
+                "AtCoder": atcoder_solved,
+                "CodeChef": codechef_solved,
+                "CodeForces": cf_solved,
+                "AC+CC+CF": combined_sum,
+                "Omegaup": omegaup_solved
+            })
 
-
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(f"{header}\n{separator}\n")
-        f.write("\n".join(results))
+    with open(output_file, "w", newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(results)
 
     print(f"\n[x] Results written to {output_file}")
 

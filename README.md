@@ -2,7 +2,7 @@
 
 # Competitive Programming Tracker
 
-This tool reads a CSV file with usernames for **AtCoder**, **CodeChef**, **CodeForces**, and **OmegaUp**, fetches how many problems each user has solved, and outputs a clean `.txt` summary.
+This tool reads a `.csv` file with usernames for **AtCoder**, **CodeChef**, **CodeForces**, and **OmegaUp**, fetches how many problems each user has solved, and outputs a clean `.csv` summary.
 
 ## Why This Exists
 
@@ -47,15 +47,14 @@ William,at_rainbow,chef_9000,cf_dreams,omega_whirl
 
 ### Output
 
-It'll output a `.txt` file named `results.txt` in the same directory as the script.
+It'll output a `.csv` file named `results.csv` in the same directory as the script.
 
 #### Example Format
 
-```txt
-Name            | AtCoder | CodeChef | CodeForces | AC+CC+CF | Omegaup
------------------------------------------------------------------------
-Henry           | 10      | 12       | 13         | 35       | 80
-William         | 5       | 7        | 10         | 22       | 49
+```csv
+Name,AtCoder,CodeChef,CodeForces,AC+CC+CF,Omegaup
+Henry,10,12,13,35,80
+William,5,7,10,22,49
 ```
 
 ## License
