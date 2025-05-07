@@ -19,7 +19,9 @@ def get_omegaup_solved(username):
             return -1
 
         data = json.loads(script_tag.string)
-        return data["profile"]["rankinfo"]["problems_solved"]
+
+        solved_problems = data.get("extraProfileDetails", {}).get("solvedProblems", [])
+        return len(solved_problems) if solved_problems else -1
 
     except Exception as e:
         return -1
